@@ -63,4 +63,4 @@ define Package/luci-app-vlmcsd/install
 	$(INSTALL_DATA) ./files/luci/controller/vlmcsd.lua $(1)/usr/lib/lua/luci/controller/vlmcsd.lua
 endef
 
-$(eval $(call BuildPackage, luci-app-vlmcsd))
+$(eval $(call BuildPackage,luci-app-vlmcsd))
