@@ -60,7 +60,7 @@ define Package/luci-app-vlmcsd/install
     $(INSTALL_CONF) ./files/vlmcsd.config $(1)/etc/config/vlmcsd
     $(INSTALL_DATA) ./files/luci/i18n/vlmcsd.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/vlmcsd.zh-cn.lmo
     $(INSTALL_DATA) ./files/luci/model/vlmcsd.lua $(1)/usr/lib/lua/luci/model/cbi/vlmcsd.lua
-	$(INSTALL_DATA) ./files/luci/controller/vlmcsd.lua $(1)/usr/lib/lua/luci/controller/vlmcsd.lua
+    $(INSTALL_DATA) ./files/luci/controller/vlmcsd.lua $(1)/usr/lib/lua/luci/controller/vlmcsd.lua
 endef
 
 $(eval $(call BuildPackage,luci-app-vlmcsd))
