@@ -22,16 +22,13 @@ local hostname = luci.model.uci.cursor():get_first("system", "system", "hostname
 autoactivate = s:option(Flag, "autoactivate", translate("Auto activate"))
 autoactivate.rmempty = false
 
-config = s:option(Value, "config", translate("configfile"), "")
+config = s:option(Value, "config", translate("configfile"), translate("This file is /etc/vlmcsd.ini."), "")
 config.template = "cbi/tvalue"
 config.rows = 5
 config.wrap = "off"
 
-msg = s:option(DummyValue, "", translate(""), 
-translate("This file is /etc/vlmcsd.ini."))
-
 function config.cfgvalue(self, section)
-    return nixio.fs.readfile("/etc/vlmcsd.ini")
+	return nixio.fs.readfile("/etc/vlmcsd.ini")
 end
 
 function config.write(self, section, value)
