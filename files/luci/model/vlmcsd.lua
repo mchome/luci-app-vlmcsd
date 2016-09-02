@@ -40,9 +40,11 @@ function enable.write(self, section, value)
 	if value == "1" then
 		luci.sys.call("/etc/init.d/vlmcsd enable >/dev/null")
 		luci.sys.call("/etc/init.d/vlmcsd start >/dev/null")
+		luci.sys.call("/etc/init.d/dnsmasq restart >/dev/null")
 	else
 		luci.sys.call("/etc/init.d/vlmcsd stop >/dev/null")
 		luci.sys.call("/etc/init.d/vlmcsd disable >/dev/null")
+		luci.sys.call("/etc/init.d/dnsmasq restart >/dev/null")
 	end
 	Flag.write(self, section, value)
 end
