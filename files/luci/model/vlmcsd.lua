@@ -24,7 +24,7 @@ autoactivate.rmempty = false
 
 config = s:option(Value, "config", translate("configfile"), translate("This file is /etc/vlmcsd.ini."), "")
 config.template = "cbi/tvalue"
-config.rows = 5
+config.rows = 15
 config.wrap = "off"
 
 function config.cfgvalue(self, section)
